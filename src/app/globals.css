@@ -189,8 +189,25 @@
 /* ===== GLOBAL RESETS ===== */
 * {
   box-sizing: border-box;
+}
+
+/* Reset only specific elements that need it */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
   padding: 0;
+  margin: 0;
 }
 
 html {
@@ -216,7 +233,12 @@ h1 {
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: hsl(var(--foreground));
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
+}
+
+h1:first-child {
+  margin-top: 0;
 }
 
 h2 {
@@ -225,7 +247,12 @@ h2 {
   line-height: 1.3;
   letter-spacing: -0.01em;
   color: hsl(var(--foreground));
+  margin-top: 1.25rem;
   margin-bottom: 0.75rem;
+}
+
+h2:first-child {
+  margin-top: 0;
 }
 
 h3 {
@@ -233,7 +260,12 @@ h3 {
   font-weight: 600;
   line-height: 1.4;
   color: hsl(var(--foreground));
+  margin-top: 1rem;
   margin-bottom: 0.5rem;
+}
+
+h3:first-child {
+  margin-top: 0;
 }
 
 h4 {
@@ -241,7 +273,12 @@ h4 {
   font-weight: 600;
   line-height: 1.4;
   color: hsl(var(--foreground));
+  margin-top: 1rem;
   margin-bottom: 0.5rem;
+}
+
+h4:first-child {
+  margin-top: 0;
 }
 
 h5 {
@@ -249,7 +286,12 @@ h5 {
   font-weight: 600;
   line-height: 1.5;
   color: hsl(var(--foreground));
+  margin-top: 0.75rem;
   margin-bottom: 0.5rem;
+}
+
+h5:first-child {
+  margin-top: 0;
 }
 
 h6 {
@@ -257,7 +299,12 @@ h6 {
   font-weight: 600;
   line-height: 1.5;
   color: hsl(var(--foreground));
+  margin-top: 0.75rem;
   margin-bottom: 0.5rem;
+}
+
+h6:first-child {
+  margin-top: 0;
 }
 
 p {
@@ -353,4 +400,76 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* ===== LIST SPACING ===== */
+ul,
+ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== BLOCKQUOTE SPACING ===== */
+blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid hsl(var(--primary));
+  font-style: italic;
+  color: hsl(var(--muted-foreground));
+}
+
+/* ===== CODE SPACING ===== */
+pre {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: var(--radius);
+  background-color: hsl(var(--muted));
+  overflow-x: auto;
+}
+
+code {
+  padding: 0.2rem 0.4rem;
+  border-radius: calc(var(--radius) - 4px);
+  background-color: hsl(var(--muted));
+  font-size: 0.875em;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+}
+
+/* ===== TABLE SPACING ===== */
+table {
+  width: 100%;
+  margin: 1rem 0;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+th {
+  font-weight: 600;
+  background-color: hsl(var(--muted));
+}
+
+/* ===== HR SPACING ===== */
+hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid hsl(var(--border));
 }
