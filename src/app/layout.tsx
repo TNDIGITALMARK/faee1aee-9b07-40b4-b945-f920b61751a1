@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { QueryProvider } from "@/components/query-provider";
 import { ZyloProvider } from "@/lib/zylo/provider";
+import { CartProvider } from "@/contexts/CartContext";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -19,8 +20,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elegant Flora Boutique",
-  description: "Beautiful AI-powered website creation platform",
+  title: "CommerceGo - Your Online Marketplace",
+  description: "Discover quality products at great prices. Shop electronics, home goods, clothing, and more.",
 };
 
 export default function RootLayout({
@@ -44,11 +45,13 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <TooltipProvider>
-                {children}
-                <Toaster />
-                <Sonner />
-              </TooltipProvider>
+              <CartProvider>
+                <TooltipProvider>
+                  {children}
+                  <Toaster />
+                  <Sonner />
+                </TooltipProvider>
+              </CartProvider>
             </ThemeProvider>
           </ZyloProvider>
         </QueryProvider>
